@@ -1,0 +1,9 @@
+# W2F — core runtime dependencies.
+# Install a CUDA build of torch/torchvision matching your driver from
+# https://pytorch.org ; the pins below are the versions the project was run with.
+torch>=2.1
+torchvision>=0.16
+numpy>=1.24
+pillow>=10.0
+opencv-python>=4.8     # Canny edge maps for the face bank (src/celeba_edges.py)
+matplotlib>=3.7        # sample grids / dataset visualizations

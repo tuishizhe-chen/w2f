@@ -1,0 +1,54 @@
+# ===== W2F .gitignore =====
+# Track CODE + DOCS only. Large/regenerable binaries (weights, banks, datasets,
+# samples) are built on demand (see README "Reproducing the paper") and are NOT
+# committed.
+
+# model weights / latents / feature banks
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+
+# datasets, training outputs, run artifacts
+/data/
+/checkpoints/
+/runs/
+/samples/
+/logs/
+/remote_samples/
+
+# generated images / figures (this repo intentionally omits the figure/montage
+# ecosystem; any stray renders stay out of git too)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+# ...except the self-contained slide deck's own assets, and the report's figures
+!/presentation/assets/**
+!/report/figs/**
+
+# secrets — never commit credentials or host/key material
+**/ssh_remote.txt
+**/*askpass*
+*.pem
+*.key
+.env
+
+# local-only research history (kept on disk, not published)
+/experiments/
+
+# third-party Drifting repo if cloned locally (we link, not vendor)
+/third_party/drifting/
+/third_party/drifting_ref/
+
+# python / tooling caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+*.egg-info/
+.DS_Store
+*.tmp
